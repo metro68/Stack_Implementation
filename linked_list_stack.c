@@ -1,34 +1,33 @@
-// Linked list implementation of stack
+//Linked List implemetation of stack
+
 struct stack{
-int data;
+char data;
 struct stack* next;
 };
 
-void push (int data, struct stack** topref){
-	if(*topref == NULL){
-		printf("stack overflow\n");
-	}	
 
-struct stack* stack1 = malloc(sizeof(structstack));
+void push(struct stack **topref, char data){
+if (*topref == NULL){
+return;
+}
+struct stack* stack1 = malloc(sizeof(struct stack));
 stack1->data = data;
-stack1-> next = *topref;
+stack1->next = *topref;
 *topref = &stack1;
 }
 
-int pop (struct stack** topref){
-	if(*topref == NULL){
-		printf("Empty stack\n");
-	}
- struct stack* top = *topref;
- int returning = stack1->data;
- *topref = top->next;
- free(top);
- return returning;
+int pop(strcut stack** topref){
+if (*topref == NULL){
+return -1;
+}
+char figure = stack1->data;
+*topref = stack1->next;
+return figure;
 }
 
-int peek(struct stack** topref){
-	if(*topref == NULL){
-		printf("Empty stack\n");
-	}
- return stack1->data;
+int peek(strcut stack** topref){
+if (*topref == NULL){
+return -1;
+}
+return stack1->data;
 }
