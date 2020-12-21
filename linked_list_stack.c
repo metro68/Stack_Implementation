@@ -16,12 +16,14 @@ stack1->next = *topref;
 *topref = &stack1;
 }
 
-char pop(strcut stack** topref){
+char pop(struct stack** topref){
 if (*topref == NULL){
 return -1;
 }
-char figure = stack1->data;
-*topref = stack1->next;
+struct stack* top = *topref;
+char figure = top->data;
+*topref = top->next;
+free(top);
 return figure;
 }
 
