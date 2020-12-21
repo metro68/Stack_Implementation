@@ -30,7 +30,5 @@ int peek(struct stack** topref){
 	if(*topref == NULL){
 		printf("Empty stack\n");
 	}
- struct stack* top = *topref;
- int returning = stack1->data;
-  return returning;
+ return stack1->data;
 }
