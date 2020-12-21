@@ -16,7 +16,7 @@ stack1->next = *topref;
 *topref = &stack1;
 }
 
-int pop(strcut stack** topref){
+char pop(strcut stack** topref){
 if (*topref == NULL){
 return -1;
 }
@@ -25,7 +25,7 @@ char figure = stack1->data;
 return figure;
 }
 
-int peek(strcut stack** topref){
+char peek(strcut stack** topref){
 if (*topref == NULL){
 return -1;
 }
