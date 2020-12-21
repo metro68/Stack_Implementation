@@ -1,39 +1,45 @@
-// Array implementation of stack
+//Array Implementation of Stack
 
 #include <stdio.h>
-#include <malloc.h>
-#define MAX 10
-int stack[], top = -1;
-void push(int stack[], int val);
-int peek(int stack[]);
-int pop(int stack[]);
+#include <stdlib.h>
 
+struct stack{
+int size;
+int top;
+int* array
+};
 
-void push(int stack[], int val)
-{
-   if(top == MAX-1)
-   {
-     printf("\n STACK OVERFLOW");
-   }
-   else {
-     stack[++top] = val;
-   }
+struct stack* createstack(int size){ //Function to create stack
+struct stack* stack1 = malloc(sizeof(struct stack));
+stack1->top = -1;
+stack1->size = size;
+stack1->array = malloc(stack1->size*sizeof(int));
+return stack1;
 }
 
-int peek(int stack[]){
-  if(top == -1){	
-    printf("\n STACK IS EMPTY");
-    return -1;
-  }
-  else
-    return (stack[top]);
+void push(struct stack* stack1,int item){
+if (stack1->top == size -1){
+return;
+}
+stack1->array[++top] = item;
 }
 
-int pop(int stack[]){
-  if(top == -1){
-    printf("\n STACK IS EMPTY");
-    return -1;
-  }
-  else
-    return (stack[top--]);
+int pop(struct stack* stack1){
+if (stack1->top == -1){
+return -1;
 }
+return stack->array[top--];
+}
+
+int peek(struct stack* stack1){
+if (stack1->top == -1){
+return -1;
+}
+return stack->array[top];
+}
+
+int main(){
+create stack(20);
+   /* ------- */ //Implement your code here
+}
+
