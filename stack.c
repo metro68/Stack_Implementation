@@ -18,7 +18,7 @@ return stack1;
 }
 
 void push(int data, struct stack* stack1){
-if(stack1->top == (size-1)){
+if(stack1->top == (stack->size-1)){
 return;
 }
 stack1->val[++top] = data;
