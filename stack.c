@@ -4,42 +4,48 @@
 #include <stdlib.h>
 
 struct stack{
+int* val;
 int size;
 int top;
-int* array
 };
 
-struct stack* createstack(int size){ //Function to create stack
+struct stack* createstack(int size){
 struct stack* stack1 = malloc(sizeof(struct stack));
 stack1->top = -1;
 stack1->size = size;
-stack1->array = malloc(stack1->size*sizeof(int));
+struct stack1->val = malloc(size*sizeof(int));
 return stack1;
 }
 
-void push(struct stack* stack1,int item){
-if (stack1->top == size -1){
+void push(int data, struct stack* stack1){
+if(stack1->top == (size-1)){
 return;
 }
-stack1->array[++top] = item;
+stack1->val[++top] = data;
+return;
 }
 
 int pop(struct stack* stack1){
-if (stack1->top == -1){
+if(stack1->top == -1){
 return -1;
 }
-return stack->array[top--];
+int value = stack1->val[top--];
+return value;
 }
 
 int peek(struct stack* stack1){
-if (stack1->top == -1){
+if(stack1->top == -1){
 return -1;
 }
-return stack->array[top];
+int value = stack1->val[top];
+return value;
 }
 
-int main(){
-create stack(20);
-   /* ------- */ //Implement your code here
+int main (){
+struct stack* stack2 = struct stack* createstack(20);
+push(20, stack2);
+push(14, stack2);
+push(10, stack2);
+peek(stack2);
+return 0;
 }
-
