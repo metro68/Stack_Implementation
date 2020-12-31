@@ -18,10 +18,10 @@ return stack1;
 }
 
 void push(int data, struct stack* stack1){
-if(stack1->top == (stack->size-1)){
+if(stack1->top == ((stack1->size)-1)){
 return;
 }
-stack1->val[++top] = data;
+stack1->val[++stack->top] = data;
 return;
 }
 
@@ -29,7 +29,7 @@ int pop(struct stack* stack1){
 if(stack1->top == -1){
 return -1;
 }
-int value = stack1->val[top--];
+int value = stack1->val[stack1->top--];
 return value;
 }
 
@@ -37,7 +37,7 @@ int peek(struct stack* stack1){
 if(stack1->top == -1){
 return -1;
 }
-int value = stack1->val[top];
+int value = stack1->val[stack1->top];
 return value;
 }
 
